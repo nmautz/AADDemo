@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentContainerView;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.List;
+
 import mautz.nathan.aadfinaldemo.placeholder.Fragment2;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,12 +25,14 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment2 = new Fragment2();
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_view, fragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_view, fragment).commitNow();
+
+
+        Fragment frag = getSupportFragmentManager().findFragmentById(R.id.fragment_container_view);
+
+        getSupportFragmentManager().beginTransaction().remove(frag).commitNow();
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_view, fragment2).commit();
 
-
-        Fragment frag = getSupportFragmentManager().getFragments().get(0);
-       // getSupportFragmentManager().beginTransaction().remove(frag);
 
 
 
