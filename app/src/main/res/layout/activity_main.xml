@@ -10,9 +10,29 @@
         android:id="@+id/fragment_container_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fragOneButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/fragOneButton"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="Frag 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragTwoButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_container_view" />
+
+    <Button
+        android:id="@+id/fragTwoButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Frag 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fragOneButton"
+        app:layout_constraintTop_toTopOf="@+id/fragOneButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
