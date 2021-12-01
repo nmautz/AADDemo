@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentContainerView;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import mautz.nathan.aadfinaldemo.placeholder.Fragment2;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,9 +16,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentContainerView fragmentContainerView = findViewById(R.id.fragment_container_view);
-        TextView infoTextView = fragmentContainerView.findViewById(R.id.infoTextView);
-        infoTextView.setText("Yoods");
+
+
+
+        Fragment fragment = new InfoPanelFragment();
+        Fragment fragment2 = new Fragment2();
+
+
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_view, fragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container_view, fragment2).commit();
+
+
+        Fragment frag = getSupportFragmentManager().getFragments().get(0);
+       // getSupportFragmentManager().beginTransaction().remove(frag);
+
 
 
     }
